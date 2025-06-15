@@ -4,3 +4,5 @@ Spring Boot learning project by Himanshu Ranjan, featuring REST APIs:
 - `/greet`: Returns a Spring Boot greeting.
 - `/test`: Returns a Spring Boot test message.
 - `/user/{name}`: Returns a personalized greeting.
+- `/user`: Create a user (POST).
+- `/users`: List all users (GET).

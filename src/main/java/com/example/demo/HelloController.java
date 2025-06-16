@@ -41,4 +41,14 @@ public class HelloController {
         public ArrayList<User> getUsers() {
             return users;
         }
+        @DeleteMapping("/user/{name}")
+        public String deleteUser(@PathVariable String name) {
+            for (int i = 0; i < users.size(); i++) {
+                if (users.get(i).getName().equals(name)) {
+                    users.remove(i);
+                    return "User " + name + "deleted.";
+                }
+            }
+            return "User " + name + " not found.";
+        }
     }

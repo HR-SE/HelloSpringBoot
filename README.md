@@ -1,5 +1,5 @@
 # HelloSpringBoot
-Spring Boot learning project by Himanshu Ranjan, featuring REST APIs:
+Spring Boot learning project by Himanshu Ranjan, featuring REST APIs with service layer:
 - `/hello`: Returns a welcome message.
 - `/greet`: Returns a Spring Boot greeting.
 - `/test`: Returns a Spring Boot test message.

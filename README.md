@@ -11,5 +11,5 @@ Spring Boot learning project by Himanshu Ranjan, featuring REST APIs with H2 dat
 ## CRUD Operations
 - **Create**: `POST /user` - Add a user (e.g., {"name":"Himanshu","email":"himanshu@example.com","age":30}).
 - **Read**: `GET /users` - List all users.
-- **Update**: (To be implemented) `PUT /user/{name}` - Modify user details.
+- **Update**: `PUT /user/{name}` - Modify user details.
 - **Delete**: `DELETE /user/{name}` - Remove a user (e.g., /user/Himanshu).

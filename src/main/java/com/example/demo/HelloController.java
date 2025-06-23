@@ -33,6 +33,11 @@ public class HelloController {
         public String createUser(@RequestBody AppUser user) {
             return userService.createUser(user);
         }
+
+        @PutMapping("/user/{name}")
+        public String updateUser(@PathVariable String name, @RequestBody AppUser userDetails)
+        {return userService.updateUser(name, userDetails);}
+
         @GetMapping("/users")
         public List<AppUser> getUsers() {
             return userService.getUsers();

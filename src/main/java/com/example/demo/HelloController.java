@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -39,8 +40,8 @@ public class HelloController {
         {return userService.updateUser(name, userDetails);}
 
         @GetMapping("/users")
-        public List<AppUser> getUsers() {
-            return userService.getUsers();
+        public Page<AppUser> getUsers(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int size) {
+            return userService.getUsers(page, size);
         }
 
         @GetMapping("/users/age/{age}")

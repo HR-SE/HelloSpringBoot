@@ -1,5 +1,8 @@
 package com.example.demo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.ArrayList;
@@ -27,8 +30,10 @@ public class UserService {
         return "User " + name + " not found.";
     }
 
-    public List<AppUser> getUsers() {
-        return userRepository.findAll();
+    public Page<AppUser> getUsers(int page, int size)
+    {
+        Pageable pageable = PageRequest.of(page, size);
+        return userRepository.findAll(pageable);
     }
 
     public List<AppUser> getUsersByAge(int age) {

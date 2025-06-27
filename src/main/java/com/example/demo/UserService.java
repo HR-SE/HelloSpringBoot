@@ -26,9 +26,15 @@ public class UserService {
         }
         return "User " + name + " not found.";
     }
+
     public List<AppUser> getUsers() {
         return userRepository.findAll();
     }
+
+    public List<AppUser> getUsersByAge(int age) {
+        return userRepository.findByAge(age);
+    }
+
     public String deleteUser(String name) {
         if (userRepository.existsById(name)) {
             userRepository.deleteById(name);

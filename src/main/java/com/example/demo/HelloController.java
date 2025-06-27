@@ -43,6 +43,11 @@ public class HelloController {
             return userService.getUsers();
         }
 
+        @GetMapping("/users/age/{age}")
+        public List<AppUser> getUsersByAge(@PathVariable int age) {
+            return userService.getUsersByAge(age);
+        }
+
         @DeleteMapping("/user/{name}")
         public String deleteUser(@PathVariable String name) {
                     return userService.deleteUser(name);

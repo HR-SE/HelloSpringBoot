@@ -7,6 +7,7 @@ Spring Boot learning project by Himanshu Ranjan, featuring REST APIs with H2 dat
 - `/user`: Create a user (POST, stored in H2).
 - `/users`: List all users (GET, from H2).
 - `/user/{name}`: Delete a user (DELETE, from H2).
+- `/users/age/{age}`: Finds users by age. (H2 query)
 
 ## CRUD Operations
 - **Create**: `POST /user` - Add a user (e.g., {"name":"Himanshu","email":"himanshu@example.com","age":30}).

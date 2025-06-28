@@ -40,8 +40,11 @@ public class HelloController {
         {return userService.updateUser(name, userDetails);}
 
         @GetMapping("/users")
-        public Page<AppUser> getUsers(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int size) {
-            return userService.getUsers(page, size);
+        public Page<AppUser> getUsers(@RequestParam(defaultValue = "0") int page,
+                                      @RequestParam(defaultValue = "5") int size,
+                                      @RequestParam(defaultValue = "age") String sortBy,
+                                      @RequestParam(defaultValue = "ASC") String sortDirection) {
+            return userService.getUsers(page, size, sortBy, sortDirection);
         }
 
         @GetMapping("/users/age/{age}")

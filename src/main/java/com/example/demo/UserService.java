@@ -5,7 +5,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.ArrayList;
+import org.springframework.data.domain.Sort;
 
 @Service
 public class UserService {
@@ -30,9 +30,10 @@ public class UserService {
         return "User " + name + " not found.";
     }
 
-    public Page<AppUser> getUsers(int page, int size)
+    public Page<AppUser> getUsers(int page, int size, String sortBy, String sortDirection)
     {
-        Pageable pageable = PageRequest.of(page, size);
+        Sort sort = Sort.by(Sort.Direction.fromString(sortDirection), sortBy);
+        Pageable pageable = PageRequest.of(page, size, sort);
         return userRepository.findAll(pageable);
     }
 

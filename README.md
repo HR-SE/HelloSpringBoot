@@ -9,6 +9,7 @@ Spring Boot learning project by Himanshu Ranjan, featuring REST APIs with H2 dat
 - `/user/{name}`: Delete a user (DELETE, from H2).
 - `/users/age/{age}`: Finds users by age. (H2 query)
 - `/users?page=0&size5`: Expect a page with 5 users, including pagination metadata (e.g., totalElements, totalPages)
+		- Added sorting to H2 Pagination
 
 ## CRUD Operations
 - **Create**: `POST /user` - Add a user (e.g., {"name":"Himanshu","email":"himanshu@example.com","age":30}).
